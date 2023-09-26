@@ -13,7 +13,7 @@ class Program
         Console.Write("What is your last name? ");
         string lastName = Console.ReadLine();
 
-        // Seems like a Console.WriteLine() will print an empty line, haven't found a way to \n;
+        // Seems like a Console.WriteLine() will print an empty line, seems like there is no way to \n for input;
         Console.WriteLine();
 
         Console.WriteLine($"Your name is {lastName}, {name} {lastName}.");
