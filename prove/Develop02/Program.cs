@@ -4,6 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop02 World!");
+        Entry entryTest = new Entry();
+
+        entryTest._entryDate = "Today LOL";
+        entryTest._entryPrompt = "Have you seen Joe?";
+        entryTest._entryAnswer = "JOE MAMA";
+
+        entryTest.DisplayEntry();
     }
 }
