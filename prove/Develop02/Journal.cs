@@ -3,9 +3,9 @@ using System.IO;
 
 public class Journal
 {
-    List<Entry> _entries = new List<Entry>();
+    public List<Entry> _entries = new List<Entry>();
 
-    //PromptManager _promptHandler = new PromptManager();
+    public PromptManager _promptHandler = new PromptManager();
 
     // As you can see no method has any parameters, that is why the Prompt class has a member variable in Journal Class;
     // I am not sure if this is a good practice or how it should be really done;
@@ -31,7 +31,7 @@ public class Journal
         Entry appendableEntryObject = new Entry();
 
         // Get Prompt Here, pass it to Entry instance member variable.
-        string randomPrompt = "Have you seen Joe";
+        string randomPrompt = _promptHandler.GetRandomPrompt();
         appendableEntryObject._entryPrompt = randomPrompt;
 
         //Get user answer and pass it to Entry instance member variable.
