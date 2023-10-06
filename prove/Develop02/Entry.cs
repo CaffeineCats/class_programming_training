@@ -8,6 +8,6 @@ public class Entry
     // It might change due to prompt generation.
     public void DisplayEntry()
     {
-        Console.WriteLine($"Date: {_entryDate} - Prompt: {_entryPrompt}\n{_entryAnswer}");
+        Console.WriteLine($"Date: {_entryDate} - Prompt: {_entryPrompt}\n{_entryAnswer}\n");
     }
 }

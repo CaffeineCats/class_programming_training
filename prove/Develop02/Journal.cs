@@ -45,14 +45,14 @@ public class Journal
         string dateText = theCurrentTime.ToShortDateString();
         appendableEntryObject._entryDate = dateText;
 
-        // Append to _Entries member variable.
+        // Append to _entries member variable.
         _entries.Add(appendableEntryObject);
 
     }
 
     public void DisplayEntries()
     {
-        // Displayin' with the boys.
+        // Displaying the Entry List.
         foreach (Entry entry in _entries)
         {
             entry.DisplayEntry();
@@ -76,6 +76,9 @@ public class Journal
     {
         //Read list of entries from a text file provided by user.
         string[] lines = System.IO.File.ReadAllLines(fileName);
+
+        //Empty the list before reading from file.
+        _entries.Clear();
 
         foreach (string line in lines)
         {
