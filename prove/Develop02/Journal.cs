@@ -7,10 +7,10 @@ public class Journal
 
     public PromptManager _promptHandler = new PromptManager();
 
-    // As you can see no method has any parameters, that is why the Prompt class has a member variable in Journal Class;
+    // As you can see no method except write/read has any parameters, that is why the Prompt class has a member variable in Journal Class;
     // I am not sure if this is a good practice or how it should be really done;
     // I did it that way because I want one list of Prompts to work all across my program;
-    // Otherwise I believe I would have had one different list when creating a prompt and when using the option of appending new prompt;
+    // Otherwise I believe I would have had one different list when creating a prompt and when using the option of appending new prompt (stretch challenge);
     // Because I would have created two instances within each method, I needed to be the same instance, so is a member variable.
     // Also I do not know if It's a good practice to not use parameters it feels like calling global variables, is weird, a large system design would be madness.
 
@@ -19,7 +19,7 @@ public class Journal
         /*We get Prompt the user with a random question, append all the related data to _Entries*/
 
         /* I will ignore my modularization knowledge;
-        I could Get a prompt from a Prompt class method or get a random one from a Prompt list as a member variable here;
+        I could Get a prompt from a Prompt class method or get a random one from a Prompt list as a member variable here (It ended as a class);
         Get a list with two strings inside from public list<String> GetEntry(string Prompt) and and pass them to the newEntry instance inside public void WriteEntry();
         Get a string from string GetDateFromSystem() and pass it to the newEntry instance;
         Pass those three strings to AppendToList(date, prompt, userAnswer)
@@ -59,13 +59,11 @@ public class Journal
         }
     }
 
-    public void WriteFile()
+    public void WriteFile(string fileName)
     {
-        //We write _entries into a text file.
-        /*The text file is provided by system;
-        If I wanted the user to interact with the file (and is a good Idea) I would have created an extra class.*/
+        //We write _entries into a text file, provided by user.
 
-        using (StreamWriter outPutFile = new StreamWriter("Entries.txt"))
+        using (StreamWriter outPutFile = new StreamWriter(fileName))
         {
             foreach (Entry entry in _entries)
             {
@@ -74,10 +72,10 @@ public class Journal
         }
     }
 
-    public void ReadFile()
+    public void ReadFile(string fileName)
     {
-        //Read list of entries from a text file
-        string[] lines = System.IO.File.ReadAllLines("Entries.txt");
+        //Read list of entries from a text file provided by user.
+        string[] lines = System.IO.File.ReadAllLines(fileName);
 
         foreach (string line in lines)
         {

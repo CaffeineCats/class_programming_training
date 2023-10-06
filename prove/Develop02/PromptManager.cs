@@ -5,7 +5,7 @@ public class PromptManager
     //The purpose of the Prompt manager is to manage all the prompts that are feed to journal;
     // That is why it has its own class, and is a member variable in Journal;
     // If the user adds a prompt to the list or pops one (we would need a file for that), but the default ones are at the constructor;
-    // I want that list to be the same all across the program.
+    // I want that prompt list to be the same all across the program.
     public PromptManager()
     {
         _prompts = new List<string> 
