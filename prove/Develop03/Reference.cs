@@ -31,7 +31,8 @@ public class Reference
         _lastVerseNumber = lastVerse;
         _isMultipleVerse = true;
     }
-
+    // Reference to hold the logic of which type of reference is being used is good encapsulation
+    // The other parts of the program just pass data and return reference, easy peasy.
     public string GetReferenceString()
     {
         if(_isMultipleVerse)
