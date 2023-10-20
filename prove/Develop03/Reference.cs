@@ -4,7 +4,7 @@ public class Reference
     private int _bookChapterNumber;
     private int _firstVerseNumber;
     private int _lastVerseNumber;
-    private bool _isMultipleleVerse;
+    private bool _isMultipleVerse;
 
     public Reference()
     {
@@ -12,7 +12,7 @@ public class Reference
         _bookChapterNumber = 3;
         _firstVerseNumber = 5;
         _lastVerseNumber = 6;
-        _isMultipleleVerse = true;
+        _isMultipleVerse = true;
     }
 
     public Reference(string bookName, int chapter, int verse)
@@ -20,7 +20,7 @@ public class Reference
         _bookName = bookName;
         _bookChapterNumber = chapter;
         _firstVerseNumber = verse;
-        _isMultipleleVerse = false;
+        _isMultipleVerse = false;
     }
 
     public Reference(string bookName, int chapter, int firstVerse, int lastVerse)
@@ -28,19 +28,19 @@ public class Reference
         _bookName = bookName;
         _bookChapterNumber = chapter;
         _firstVerseNumber = firstVerse;
-        _firstVerseNumber = lastVerse;
-        _isMultipleleVerse = true;
+        _lastVerseNumber = lastVerse;
+        _isMultipleVerse = true;
     }
 
     public string GetReferenceString()
     {
-        if(_isMultipleleVerse)
+        if(_isMultipleVerse)
         {
-            return"JOTARO";
+            return $"{_bookName} {_bookChapterNumber}:{_firstVerseNumber}-{_lastVerseNumber}";
         }
         else
         {
-            return "DIO";
+            return $"{_bookName} {_bookChapterNumber}:{_firstVerseNumber}";
         }
     }
 
