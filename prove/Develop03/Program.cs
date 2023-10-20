@@ -1,14 +1,12 @@
 using System;
+using Microsoft.VisualBasic;
 
 class Program
 {
     static void Main(string[] args)
     {
-        Word zeWord = new Word("PALABRA");
+        Scripture TheScripture = new Scripture();
 
-        Console.WriteLine(zeWord.GetWordAsCurrentVisibility());
-
-        zeWord.HideWord();
-        Console.WriteLine(zeWord.GetWordAsCurrentVisibility());
+        Console.WriteLine(TheScripture.GetRenderedScriptureText());
     }
 }
