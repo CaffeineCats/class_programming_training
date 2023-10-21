@@ -60,7 +60,7 @@ public class Scripture
 
         return false;
     }
-
+    // Extra Functionality, it won't hide any already hidden words.
     public void HideUpToThreeWords()
     {
         Random randomGenerator = new Random();
