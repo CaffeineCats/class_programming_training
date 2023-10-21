@@ -4,6 +4,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Sandbox World!");
+        bool isHidden = true;
+
+        if(!isHidden)
+        {
+            Console.WriteLine("Is hidden");
+        }
+        else
+        {
+            Console.WriteLine("Is not hidden");
+        }
     }
 }

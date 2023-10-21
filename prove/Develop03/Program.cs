@@ -5,8 +5,28 @@ class Program
 {
     static void Main(string[] args)
     {
-        Scripture TheScripture = new Scripture();
+        Scripture theScripture = new Scripture();
 
-        Console.WriteLine(TheScripture.GetRenderedScriptureText());
+        Console.WriteLine(theScripture.GetRenderedScriptureText());
+        theScripture.HideUpToThreeWords();
+        Console.WriteLine(theScripture.GetRenderedScriptureText());
+        theScripture.HideUpToThreeWords();
+        Console.WriteLine(theScripture.GetRenderedScriptureText());
+        theScripture.HideUpToThreeWords();
+        Console.WriteLine(theScripture.GetRenderedScriptureText());
+        theScripture.HideUpToThreeWords();
+        Console.WriteLine(theScripture.GetRenderedScriptureText());
+        theScripture.HideUpToThreeWords();
+        Console.WriteLine(theScripture.GetRenderedScriptureText());
+        theScripture.HideUpToThreeWords();
+        Console.WriteLine(theScripture.GetRenderedScriptureText());
+        theScripture.HideUpToThreeWords();
+        Console.WriteLine(theScripture.GetRenderedScriptureText());
+        theScripture.HideUpToThreeWords();
+        Console.WriteLine(theScripture.GetRenderedScriptureText());
+        theScripture.HideUpToThreeWords();
+        Console.WriteLine(theScripture.GetRenderedScriptureText());
+        theScripture.HideUpToThreeWords();
+        Console.WriteLine(theScripture.GetRenderedScriptureText());
     }
 }

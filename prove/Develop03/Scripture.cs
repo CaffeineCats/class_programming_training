@@ -38,7 +38,6 @@ public class Scripture
 
     public string GetRenderedScriptureText()
     {
-
         List<string> words = new List<string>();
 
         foreach(Word word in _words)
@@ -47,5 +46,44 @@ public class Scripture
         }
 
         return $"{_reference.GetReferenceString()} {string.Join(" ", words)}";
+    }
+
+    public bool AreThereUnHiddenWordsLeft()
+    {
+        foreach(Word word in _words)
+        {
+            if(!word.IsHidden())
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public void HideUpToThreeWords()
+    {
+        Random randomGenerator = new Random();
+
+        int hidingWordCounter = 1;
+        
+        while(hidingWordCounter <= 3 && AreThereUnHiddenWordsLeft())
+        {
+            bool keepHiding = true;
+
+            while(keepHiding)
+            {
+                int randomNumber = randomGenerator.Next(0, _words.Count());
+
+                if (!_words[randomNumber].IsHidden())
+                {
+                    _words[randomNumber].HideWord();
+
+                    keepHiding = false;
+                }
+            }
+            
+            hidingWordCounter++;
+        }
     }
 }
