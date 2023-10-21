@@ -42,7 +42,7 @@ public class Scripture
 
         foreach(Word word in _words)
         {
-            words.Add(word.GetWordAsCurrentVisibility());
+            words.Add(word.GetWordWithCurrentVisibility());
         }
 
         return $"{_reference.GetReferenceString()} {string.Join(" ", words)}";
@@ -52,7 +52,7 @@ public class Scripture
     {
         foreach(Word word in _words)
         {
-            if(!word.IsHidden())
+            if(word.IsVisible())
             {
                 return true;
             }
@@ -75,7 +75,7 @@ public class Scripture
             {
                 int randomNumber = randomGenerator.Next(0, _words.Count());
 
-                if (!_words[randomNumber].IsHidden())
+                if (_words[randomNumber].IsVisible())
                 {
                     _words[randomNumber].HideWord();
 

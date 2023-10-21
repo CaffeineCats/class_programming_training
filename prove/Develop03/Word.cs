@@ -1,22 +1,22 @@
 public class Word
 {
     private string _scriptureWord;
-    private bool _isHidden;
+    private bool _isVisible;
 
     public Word(string word)
     {
         _scriptureWord = word;
-        _isHidden = false;
+        _isVisible = true;
     }
 
     public void HideWord()
     {
-        _isHidden = true;
+        _isVisible = false;
     }
 
-    public bool IsHidden()
+    public bool IsVisible()
     {
-        if(_isHidden)
+        if(_isVisible)
         {
             return true;
         }
@@ -26,9 +26,14 @@ public class Word
         }
     }
 
-    public string GetWordAsCurrentVisibility()
+    public string GetWordWithCurrentVisibility()
     {
-        if(_isHidden)
+        if(_isVisible)
+        {
+            return _scriptureWord;
+        }
+
+        else
         {
             List<string> letters = new List<string>();
 
@@ -38,12 +43,6 @@ public class Word
             }
 
             return string.Join("", letters);
-
-        }
-
-        else
-        {
-            return _scriptureWord;
         }
     }
 }
