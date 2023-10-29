@@ -1,6 +1,6 @@
 public class Assignnment
 {
-    private string _studentName;
+    protected string _studentName;
     private string _topic;
 
     public Assignnment (string studentName, string topic)
@@ -13,7 +13,5 @@ public class Assignnment
     {
         return $"{_studentName} - {_topic}";
     }
-
-
 
 }

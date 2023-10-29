@@ -4,8 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        MathAssignment anAssignemnt = new MathAssignment("Luis Riquelme","Inheritance", "7.1", "1");
+        WritingAssignment anAssignemnt = new WritingAssignment("Luis Riquelme","Inheritance", "A really Good Book");
 
-        Console.WriteLine(anAssignemnt.GetHomeWorkList());
+        Console.WriteLine(anAssignemnt.GetWritingInformation());
     }
 }
