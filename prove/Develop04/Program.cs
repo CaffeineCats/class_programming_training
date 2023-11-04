@@ -6,6 +6,5 @@ class Program
     {
         // Menu to Choose Activity.
         Activity activity = new Activity();
-        activity.DisplayGetReadyPause();
     }
 }

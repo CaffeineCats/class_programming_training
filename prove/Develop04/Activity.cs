@@ -6,24 +6,27 @@ public class Activity
     private string _activityDescription;
     private int _activityDurationSeconds;
 
-    // Placeholder constructor with data that should not see the day of light, ever.
+    // Constructor with dummy data.
     public Activity()
     {
        _activityName = "None";
        _activityDescription = "None";
        _activityDurationSeconds = 0;
     }
+
     // To create constructors in children classes.
     protected void SetActivityName(string name)
     {
         _activityName = name;
     }
+
     // To create constructors in children classes.
     protected void SetActivityDescription(string description)
     {
         _activityDescription = description;
     }
-    //Activity duration setter with user data validation. 
+
+    // Activity duration setter with user data validation. 
     protected void PromptActivityDuration()
     {
         bool validatingInput = true;
@@ -54,11 +57,13 @@ public class Activity
             }
         }
     }
+
     // Initial message displayer.
     protected void DisplaySartingMessage()
     {
         Console.WriteLine($"Welcome to the {_activityName}.\n\nThis activity will {_activityDescription}.\n");
     }
+
     // A countdown, format strings around it to display as required.
     protected void DisplayCountdownAnimationPause(int pauseSecondsDuration)
     {
@@ -79,6 +84,7 @@ public class Activity
             countdown--;
         }
     }
+
     // A wheel animation pause, format strings around it ti display as required.
     protected void DisplayWheelPauseAnimation(int pauseSecondsDuration)
     {
@@ -105,18 +111,26 @@ public class Activity
         }
 
     }
+
     // Get Ready Pause Message for right before each activity.
-    public void DisplayGetReadyPause()
+    protected void DisplayGetReadyPause()
     {
         Console.WriteLine("Get Ready...");
         DisplayWheelPauseAnimation(5);
     }
-    // Congratulating pause for right after each activity.
-    public void DisplayWellDonePause()
+
+    // Congratulating pause Message for right after each activity.
+    protected void DisplayWellDonePause()
     {
         Console.WriteLine("Well Done!!");
         DisplayWheelPauseAnimation(5);
     }
 
-    // Good Job Ending Message Display Method - Message : Good Job, Activity Completed Name and Pause For Several Seconds Animation
+    // Display data about the activity duration to the user, can add other if required in the future.
+    protected void DisplayFinalStatistics()
+    {
+        Console.WriteLine($"You have completed another {_activityDurationSeconds} of the {_activityName}.");
+    }
+
+    // Display methods can change to match line position in RunActivity() as the video specified;
 }
