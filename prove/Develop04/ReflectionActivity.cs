@@ -2,14 +2,13 @@ using System.Runtime.CompilerServices;
 
 public class ReflectionActivity : Activity
 {   
+    private const string ACTIVITY_DESCRIPTION = "This activity will help you reflect on times in your life " +
+    "when you have shown strength and resilience. " +
+    "This will help you recognize the power you have and how you can use it in other aspects of your life.";
     private List<string> _mainReflectivePromptList;
     private List<string> _reflectivePrompts;
-    public ReflectionActivity()
+    public ReflectionActivity() : base("Reflection Activity", ACTIVITY_DESCRIPTION) 
     {
-        base.SetActivityName("Reflection Activity");
-        base.SetActivityDescription("This activity will help you reflect on times in your life when you have shown strength and resilience. " +
-        "This will help you recognize the power you have and how you can use it in other aspects of your life.");
-
         _mainReflectivePromptList = new List<string>() {
             "Think of a time when you stood up for someone else.",
             "Think of a time when you did something really difficult.",

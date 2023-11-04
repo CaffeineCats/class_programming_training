@@ -6,24 +6,10 @@ public class Activity
     private string _activityDescription;
     protected int _activityDurationSeconds;
 
-    // Constructor with dummy data.
-    public Activity()
+    protected Activity(string activityName, string activityDescription) 
     {
-       _activityName = "None";
-       _activityDescription = "None";
-       _activityDurationSeconds = 0;
-    }
-
-    // To create constructors in children classes.
-    protected void SetActivityName(string name)
-    {
-        _activityName = name;
-    }
-
-    // To create constructors in children classes.
-    protected void SetActivityDescription(string description)
-    {
-        _activityDescription = description;
+        _activityName = activityName;
+        _activityDescription = activityDescription;
     }
 
     // Activity duration setter with user data validation. 
