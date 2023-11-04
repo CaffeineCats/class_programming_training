@@ -1,13 +1,16 @@
 using System;
+using System.Runtime.InteropServices;
 
 class Program
 {
     static void Main(string[] args)
     {
-        // Menu to Choose Activity.
-        BreathingActivity activity = new BreathingActivity();
+        Console.Clear();
+        Console.WriteLine("THEMENUGOESHEREMAHBOY");
+        
+        ReflectionActivity activity = new ReflectionActivity();
 
-        activity.RunBreathingActivity();
+        activity.RunReflectingActivity();
 
     }
 }

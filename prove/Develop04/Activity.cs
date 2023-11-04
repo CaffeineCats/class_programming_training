@@ -121,14 +121,14 @@ public class Activity
     {   
         Console.Clear();
         Console.WriteLine("Get Ready...");
-        DisplayWheelPauseAnimation(6);
+        DisplayWheelPauseAnimation(5);
     }
 
     // Congratulating pause Message for right after each activity.
     protected void DisplayWellDonePause()
     {
         Console.WriteLine("\n\nWell Done!!");
-        DisplayWheelPauseAnimation(4);
+        DisplayWheelPauseAnimation(5);
     }
 
     // Display data about the activity duration to the user, can add other statistics if required in the future.
@@ -137,6 +137,6 @@ public class Activity
     protected void DisplayFinalStatistics(int activityTotalDurationSeconds)
     {
         Console.WriteLine($"\nYou have completed another {activityTotalDurationSeconds} seconds of the {_activityName}.");
-        DisplayWheelPauseAnimation(6);
+        DisplayWheelPauseAnimation(7);
     }
 }
