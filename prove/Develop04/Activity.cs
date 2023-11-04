@@ -59,19 +59,64 @@ public class Activity
     {
         Console.WriteLine($"Welcome to the {_activityName}.\n\nThis activity will {_activityDescription}.\n");
     }
-
-    public void DisplayCountdownAnimationPause(int pauseSecondsDuration)
+    // A countdown, format strings around it to display as required.
+    protected void DisplayCountdownAnimationPause(int pauseSecondsDuration)
     {
-        for (int i = pauseSecondsDuration; i > 0; i--)
-        {
-            Console.Write(i);
-            Thread.Sleep(1000);
-            Console.Write("\b \b");
-        }
-        Console.WriteLine();
-    }
+        int countdown = pauseSecondsDuration;
 
-    // ACtivity Child Class Execution
+        // It's odd how this time loop must be specifically written this way for it to work;
+        // Probably has something to do with DateTime data type.
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(pauseSecondsDuration);
+
+        while (DateTime.Now < endTime) 
+        {
+            Console.Write(countdown);
+            Thread.Sleep(1000);
+            // Modify here for more than one digit.
+            Console.Write("\b \b");
+
+            countdown--;
+        }
+    }
+    // A wheel animation pause, format strings around it ti display as required.
+    protected void DisplayWheelPauseAnimation(int pauseSecondsDuration)
+    {
+        List<string> animationFramesStringList = new List<string>() {"|", "/", "-", "\\"};
+
+        int animationItemIndex = 0;
+
+        DateTime startTime = DateTime.Now;
+        DateTime endTime = startTime.AddSeconds(pauseSecondsDuration);
+
+        while (DateTime.Now < endTime) 
+        {
+            string stringFrame = animationFramesStringList[animationItemIndex];
+            Console.Write(stringFrame);
+            Thread.Sleep(250);
+            Console.Write("\b \b");
+
+            animationItemIndex++;
+
+            if (animationItemIndex >= animationFramesStringList.Count)
+            {
+                animationItemIndex = 0;
+            } 
+        }
+
+    }
+    // Get Ready Pause Message for right before each activity.
+    public void DisplayGetReadyPause()
+    {
+        Console.WriteLine("Get Ready...");
+        DisplayWheelPauseAnimation(5);
+    }
+    // Congratulating pause for right after each activity.
+    public void DisplayWellDonePause()
+    {
+        Console.WriteLine("Well Done!!");
+        DisplayWheelPauseAnimation(5);
+    }
 
     // Good Job Ending Message Display Method - Message : Good Job, Activity Completed Name and Pause For Several Seconds Animation
 }
