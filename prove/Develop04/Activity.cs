@@ -4,7 +4,7 @@ public class Activity
 {
     private string _activityName;
     private string _activityDescription;
-    private int _activityDurationSeconds;
+    protected int _activityDurationSeconds;
 
     // Constructor with dummy data.
     public Activity()
@@ -35,7 +35,10 @@ public class Activity
         {
             try
             {  
-                Console.Write("How long, in seconds, would you like for your session? ");
+                // I add the approximatedly because I will compute the exact seconds spent in an activity.
+                // For instance, a breathing cicle lasts 16 seconds, if user inputs 30 sseconds, the activity will run for 32 seconds;
+                // I will compute the exact time and display those 32 seconds in the final message.
+                Console.Write("How long approximatedly, in seconds, would you like for your session? ");
                 int inputSeconds = int.Parse(Console.ReadLine());
 
                 if (inputSeconds > 0)
@@ -61,7 +64,8 @@ public class Activity
     // Initial message displayer.
     protected void DisplaySartingMessage()
     {
-        Console.WriteLine($"Welcome to the {_activityName}.\n\nThis activity will {_activityDescription}.\n");
+        Console.Clear();
+        Console.WriteLine($"Welcome to the {_activityName}.\n\n{_activityDescription}\n");
     }
 
     // A countdown, format strings around it to display as required.
@@ -114,23 +118,25 @@ public class Activity
 
     // Get Ready Pause Message for right before each activity.
     protected void DisplayGetReadyPause()
-    {
+    {   
+        Console.Clear();
         Console.WriteLine("Get Ready...");
-        DisplayWheelPauseAnimation(5);
+        DisplayWheelPauseAnimation(6);
     }
 
     // Congratulating pause Message for right after each activity.
     protected void DisplayWellDonePause()
     {
-        Console.WriteLine("Well Done!!");
-        DisplayWheelPauseAnimation(5);
+        Console.WriteLine("\n\nWell Done!!");
+        DisplayWheelPauseAnimation(4);
     }
 
-    // Display data about the activity duration to the user, can add other if required in the future.
-    protected void DisplayFinalStatistics()
+    // Display data about the activity duration to the user, can add other statistics if required in the future.
+    // I want to compute the exact seconds that the user spents in the activity;
+    // Because each activity is different I pass the computation result as an argument, for the computation might be different per activity.
+    protected void DisplayFinalStatistics(int activityTotalDurationSeconds)
     {
-        Console.WriteLine($"You have completed another {_activityDurationSeconds} of the {_activityName}.");
+        Console.WriteLine($"\nYou have completed another {activityTotalDurationSeconds} seconds of the {_activityName}.");
+        DisplayWheelPauseAnimation(6);
     }
-
-    // Display methods can change to match line position in RunActivity() as the video specified;
 }
