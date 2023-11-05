@@ -1,5 +1,4 @@
 using System.Diagnostics;
-
 public class BreathingActivity : Activity
 {
     private const string ACTIVITY_DESCRIPTION = "This activity will help you relax by walking your through breathing in and out slowly. " +

@@ -33,7 +33,7 @@ public class ListingActivity : Activity
         _answerList.Add(Console.ReadLine());
     }
 
-    public void RunReflectingActivity()
+    public void RunListingActivity()
     {
         base.DisplaySartingMessage();
         base.PromptActivityDuration();
@@ -57,7 +57,7 @@ public class ListingActivity : Activity
         base.DisplayWellDonePause();
 
         // The duration of this activity is an estimate, the one provided by user.
-        // The activity can go longer than the user specified in seconds if no answer is provided.
+        // The activity can go longer than the user specified in seconds if no answer is provided by user.
         // We will assume that the user did total use of the time as best as posible.
         base.DisplayFinalStatistics(_activityDurationSeconds);
 
