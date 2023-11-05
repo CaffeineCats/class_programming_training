@@ -113,7 +113,7 @@ public class Activity
     // Congratulating pause Message for right after each activity.
     protected void DisplayWellDonePause()
     {
-        Console.WriteLine("\n\nWell Done!!");
+        Console.WriteLine("\nWell Done!!");
         DisplayWheelPauseAnimation(5);
     }
 

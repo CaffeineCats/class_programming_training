@@ -42,6 +42,8 @@ public class BreathingActivity : Activity
             activityCounter++;
         }
 
+        // There is two new lines specified in the video here, the other one is a \n iniside the next method.
+        Console.WriteLine();
         base.DisplayWellDonePause();
 
         // The total duration in seconds is 16 per breathing cicle.
