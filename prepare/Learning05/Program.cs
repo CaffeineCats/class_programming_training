@@ -4,9 +4,15 @@ class Program
 {
     static void Main(string[] args)
     {
-        Square zeSquare = new Square("square", 5);
+        List<Shape> shapes = new List<Shape>();
+        shapes.Add(new Square("Red", 5));
+        shapes.Add(new Rectangle("Blue", 5, 10));
+        shapes.Add(new Circle("Purple", 12));
 
-        Console.WriteLine(zeSquare.GetColor());
-        Console.WriteLine(zeSquare.GetArea());
+        foreach (Shape shape in shapes)
+        {
+            Console.WriteLine(shape.GetColor());
+            Console.WriteLine(shape.GetArea());
+        }
     }
 }
