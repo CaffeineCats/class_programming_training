@@ -18,9 +18,9 @@ public class Shape
         _color = color;
     }
 
-    public virtual float GetArea()
+    public virtual double GetArea()
     {
-        return 5320;
+        return 0;
     }
 
 }
