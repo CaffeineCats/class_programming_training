@@ -4,6 +4,9 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Learning05 World!");
+        Square zeSquare = new Square("square", 5);
+
+        Console.WriteLine(zeSquare.GetColor());
+        Console.WriteLine(zeSquare.GetArea());
     }
 }
