@@ -118,7 +118,26 @@ public class EternalQuestMenu
         }
         else
         {
-            Console.WriteLine($"The goal {_goals[option - 1].GetGoalName()} is already completed!");
+            Console.WriteLine($"The goal '{_goals[option - 1].GetGoalName()}' is already completed, CONGRATULATIONS," +
+            " THANK YOU SO MUCH A-FOR-TO PLAYING MY GAME! SOLONGEBOWSER! (Super Mario 64 Reference)");
+        }
+    }
+
+    public void WriteGoalsToUserTextFile()
+    {
+        // StreamWritter Overrides existing files, meaning it will be content erased before writing new content.
+
+        Console.Write("What is the filename for the goal file? ");
+        string filename = Console.ReadLine();
+
+        using (StreamWriter outputFile = new StreamWriter(filename))
+        {
+            outputFile.WriteLine(_totalPoints);
+
+            foreach (Goal goal in _goals)
+            {
+                outputFile.WriteLine(goal.GetStringRepresentation());
+            }
         }
     }
 
