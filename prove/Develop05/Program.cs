@@ -9,10 +9,14 @@ class Program
         bool keepTracking = true;
 
         EternalQuestMenu eternalQuest = new EternalQuestMenu();
+        TotalPointsAchievement _aThousandPoints = new TotalPointsAchievement("Goal Hero", 1000);
 
         while (keepTracking)
         {
             Console.WriteLine($"\nYou have {eternalQuest.GetTotalPoints()} points.\n");
+            
+            _aThousandPoints.DisplayIfPossible(eternalQuest.GetTotalPoints());
+
             Console.WriteLine("Menu Options:\n  1. Create New Goal\n  2. List Goals\n  3. Save Goals");
             Console.WriteLine("  4. Load Goals\n  5. Record Event\n  6. Quit");
             Console.Write("Select a choice from the menu: ");

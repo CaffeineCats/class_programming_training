@@ -18,7 +18,7 @@ public class TotalPointsAchievement
     {
         if (!_isComplete && totalPoints >= _totalPointsGoal)
         {
-            Console.WriteLine($"CONGRATULATIONS!!!\nYou have achieved {_achievementName}: \nBy Reaching {_totalPointsGoal} Total Points!'");
+            Console.WriteLine($"CONGRATULATIONS!!!\nYou have achieved {_achievementName}: \nBy Achieving the {_totalPointsGoal} Total Points Mark!\n'");
             _isComplete = true;
         }
     }
