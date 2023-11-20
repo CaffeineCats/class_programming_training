@@ -4,9 +4,9 @@ using System.Runtime.CompilerServices;
 
 public class TotalPointsAchievement
 {
-    string _achievementName;
-    int _totalPointsGoal; 
-    bool _isComplete;
+    private string _achievementName;
+    private int _totalPointsGoal; 
+    private bool _isComplete;
 
     public TotalPointsAchievement(string name, int totalPointsGoal)
     {
