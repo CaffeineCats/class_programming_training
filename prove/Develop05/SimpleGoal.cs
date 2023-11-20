@@ -2,21 +2,21 @@ using System.Reflection.Metadata.Ecma335;
 
 public class SimpleGoal : Goal
 {
-    private bool _completion;
+    private bool _isComplete;
 
-    public SimpleGoal(string name, string description, int points, bool completion = false) : base(name, description, points)
+    public SimpleGoal(string name, string description, int points, bool isComplete = false) : base(name, description, points)
     {
-        _completion = completion;
+        _isComplete = isComplete;
     }
 
     public override bool IsComplete()
     {
-        return _completion;
+        return _isComplete;
     }
 
     public override int RecordEvent()
     {
-        _completion = true;
+        _isComplete = true;
 
         return _basePoints;
     }
@@ -30,6 +30,6 @@ public class SimpleGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return $"SimpleGoal:{base.GetGoalName()},{_goalDescription},{_basePoints},{_completion}";
+        return $"SimpleGoal:{base.GetGoalName()},{_goalDescription},{_basePoints},{_isComplete}";
     }
 }
