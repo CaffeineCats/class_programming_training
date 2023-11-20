@@ -17,12 +17,12 @@ public class EternalGoal : Goal
 
     public override void DisplayGoal()
     {
-        Console.WriteLine($"[ ] {_goalName} ({_goalDescription})");
+        Console.WriteLine($"[ ] {base.GetGoalName()} ({_goalDescription})");
     }
 
     public override string GetStringRepresentation()
     {
         // NEEDS TESTING AND REVIEW
-        return $"EternalGoal:{_goalName},{_goalDescription},{_basePoints}";
+        return $"EternalGoal:{base.GetGoalName()},{_goalDescription},{_basePoints}";
     }
 }

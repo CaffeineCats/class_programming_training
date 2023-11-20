@@ -1,11 +1,11 @@
 public abstract class Goal
 {
-    // Figure if the class can be abstract instead.
-    protected string _goalName;
+    // Abstract classes can be declared but not instanciated.
+    private string _goalName;
     protected string _goalDescription;
     protected int _basePoints;
     
-    // Find protection level.
+    // This class cannot be instanciated, so if public or private is the same.
     public Goal(string name, string description, int points)
     {
         _goalName = name;

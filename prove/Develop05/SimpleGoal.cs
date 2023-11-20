@@ -26,12 +26,12 @@ public class SimpleGoal : Goal
     {
         string completionMark = IsComplete() ? "X" : " ";
 
-        Console.WriteLine($"[{completionMark}] {_goalName} ({_goalDescription})");
+        Console.WriteLine($"[{completionMark}] {base.GetGoalName()} ({_goalDescription})");
     }
 
     public override string GetStringRepresentation()
     {
         // NEEDS TESTING AND REVIEW
-        return $"SimpleGoal:{_goalName},{_goalDescription},{_basePoints},{_keepInteracting}";
+        return $"SimpleGoal:{base.GetGoalName()},{_goalDescription},{_basePoints},{_keepInteracting}";
     }
 }

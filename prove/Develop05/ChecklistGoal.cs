@@ -29,12 +29,12 @@ public class ChecklistGoal : Goal
     {
         string completionMark = IsComplete() ? "X" : " ";
 
-        Console.WriteLine($"[{completionMark}] {_goalName} ({_goalDescription}) -- Currently completed: {_goalCounter}/{_goalLimit}");
+        Console.WriteLine($"[{completionMark}] {base.GetGoalName()} ({_goalDescription}) -- Currently completed: {_goalCounter}/{_goalLimit}");
     }
 
     public override string GetStringRepresentation()
     {
         // NEEDS TESTING AND REVIEW
-        return $"ChecklistGoal:{_goalName},{_goalDescription},{_basePoints},{_bonusPoints},{_goalLimit},{_goalCounter}";
+        return $"ChecklistGoal:{base.GetGoalName()},{_goalDescription},{_basePoints},{_bonusPoints},{_goalLimit},{_goalCounter}";
     }
 }

@@ -82,7 +82,7 @@ public class EternalQuest
         int option = int.Parse(Console.ReadLine());
 
         // To option - 1 is to match the list indexes with the user input.
-        // If goal is NOT complete, trigger event, otherwise infor user of already completion.
+        // If goal is NOT complete, trigger event, otherwise inform user of completion.
         if (!_goals[option - 1].IsComplete())
         {
             int points = _goals[option - 1].RecordEvent();
