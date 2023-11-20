@@ -4,6 +4,12 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Develop05 World!");
+        EternalQuest eternalQuest = new EternalQuest();
+
+        eternalQuest.AppendEternalGoal();
+        eternalQuest.AppendChecklistGoal();
+        eternalQuest.AppendSimpleGoal();
+
+        eternalQuest.DisplayGoals();
     }
 }

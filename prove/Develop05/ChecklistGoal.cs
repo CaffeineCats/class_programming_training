@@ -27,7 +27,7 @@ public class ChecklistGoal : Goal
 
     public override void DisplayGoal()
     {
-        string completionMark = IsComplete() ? "X" : "";
+        string completionMark = IsComplete() ? "X" : " ";
 
         Console.WriteLine($"[{completionMark}] {_goalName} ({_goalDescription}) -- Currently completed: {_goalCounter}/{_goalLimit}");
     }

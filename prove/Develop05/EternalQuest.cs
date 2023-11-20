@@ -50,4 +50,18 @@ public class EternalQuest
 
         _goals.Add(new ChecklistGoal(name, description, points, bonusPoints, goalLimit));
     }
+
+    public void DisplayGoals()
+    {
+        int goalNumber = 0;
+
+        foreach (Goal goal in _goals)
+        {
+            goalNumber++;
+
+            Console.Write($"{goalNumber}. ");
+            goal.DisplayGoal();
+        }
+    }
+
 }

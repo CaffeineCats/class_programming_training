@@ -11,7 +11,7 @@ public class SimpleGoal : Goal
 
     public override bool IsComplete()
     {
-        bool completion = _keepInteracting ? true : false;
+        bool completion = _keepInteracting ? false : true;
         return completion;
     }
 
@@ -24,7 +24,7 @@ public class SimpleGoal : Goal
 
     public override void DisplayGoal()
     {
-        string completionMark = IsComplete() ? "X" : "";
+        string completionMark = IsComplete() ? "X" : " ";
 
         Console.WriteLine($"[{completionMark}] {_goalName} ({_goalDescription})");
     }

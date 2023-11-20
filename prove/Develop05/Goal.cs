@@ -6,7 +6,7 @@ public class Goal
     protected int _basePoints;
     
     // Find protection level.
-    protected Goal(string name, string description, int points)
+    public Goal(string name, string description, int points)
     {
         _goalName = name;
         _goalDescription = description;
