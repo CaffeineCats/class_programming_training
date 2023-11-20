@@ -22,7 +22,6 @@ public class EternalGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        // NEEDS TESTING AND REVIEW
         return $"EternalGoal:{base.GetGoalName()},{_goalDescription},{_basePoints}";
     }
 }

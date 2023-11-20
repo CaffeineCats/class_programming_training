@@ -1,3 +1,5 @@
+using System.Collections;
+
 public class EternalQuestMenu
 {
     private List<Goal> _goals = new List<Goal>();
@@ -139,6 +141,41 @@ public class EternalQuestMenu
                 outputFile.WriteLine(goal.GetStringRepresentation());
             }
         }
+    }
+
+    public void AppendGoalsFromUserTextFile()
+    {   
+
+        _goals.Clear();
+
+        Console.Write("What is the filename for the goal file? ");
+        string filename = Console.ReadLine();
+        
+        string[] lines = System.IO.File.ReadAllLines(filename);
+
+        _totalPoints = int.Parse(lines[0]);
+
+        for (int i = 1; i < lines.Count(); i++)
+        {
+            string[] factoryPattern = lines[i].Split(":");
+            string[] goalAtributes = factoryPattern[1].Split(",");
+
+            switch(factoryPattern[0])
+            {
+                case "SimpleGoal":
+                    // goal name, goal description, goal base points and completion bool with the proper format and conversion.
+                    _goals.Add(new SimpleGoal(goalAtributes[0], goalAtributes[1], int.Parse(goalAtributes[2]), Convert.ToBoolean(goalAtributes[3].ToLower())));
+                    break;
+                case "EternalGoal":
+                    // goal name, goal description, goal base points.
+                    _goals.Add(new EternalGoal(goalAtributes[0], goalAtributes[1], int.Parse(goalAtributes[2])));
+                    break;
+                case "ChecklistGoal":
+                    // goal name, goal description, goal base points, bonus points, goal limit and goal counter.
+                    _goals.Add(new ChecklistGoal(goalAtributes[0], goalAtributes[1], int.Parse(goalAtributes[2]), int.Parse(goalAtributes[3]), int.Parse(goalAtributes[4]), int.Parse(goalAtributes[5])));
+                    break;
+            }
+        } 
     }
 
 }

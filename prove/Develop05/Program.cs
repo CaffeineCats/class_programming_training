@@ -33,6 +33,7 @@ class Program
                     break;
 
                 case 4:
+                    eternalQuest.AppendGoalsFromUserTextFile();
                     break;
 
                 case 5:

@@ -4,11 +4,11 @@ public class ChecklistGoal : Goal
     private int _goalLimit;
     private int _goalCounter;
 
-    public ChecklistGoal(string name, string description, int points, int bonusPoints, int goalLimit) : base(name, description, points)
+    public ChecklistGoal(string name, string description, int points, int bonusPoints, int goalLimit, int goalCounter = 0) : base(name, description, points)
     {
         _bonusPoints = bonusPoints;
         _goalLimit = goalLimit;
-        _goalCounter = 0;
+        _goalCounter = goalCounter;
     }
 
     public override bool IsComplete()
@@ -34,7 +34,7 @@ public class ChecklistGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        // NEEDS TESTING AND REVIEW
+        
         return $"ChecklistGoal:{base.GetGoalName()},{_goalDescription},{_basePoints},{_bonusPoints},{_goalLimit},{_goalCounter}";
     }
 }
