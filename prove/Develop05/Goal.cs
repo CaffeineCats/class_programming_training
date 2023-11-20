@@ -1,4 +1,4 @@
-public class Goal
+public abstract class Goal
 {
     // Figure if the class can be abstract instead.
     protected string _goalName;
@@ -13,23 +13,11 @@ public class Goal
         _basePoints = points;
     }
 
-    public virtual bool IsComplete()
-    {
-        return true;
-    }
+    public abstract bool IsComplete();
 
-    public virtual int RecordEvent()
-    {
-        return 0;
-    }
+    public abstract int RecordEvent();
 
-    public virtual void DisplayGoal()
-    {
-        Console.WriteLine("HEHEHE, Goal goes brbrbrbrb.");
-    }
+    public abstract void DisplayGoal();
 
-    public virtual string GetStringRepresentation()
-    {
-        return "Factory Pattern of each goal.";
-    }
+    public abstract string GetStringRepresentation();
 }
