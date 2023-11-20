@@ -13,6 +13,11 @@ public abstract class Goal
         _basePoints = points;
     }
 
+    public string GetGoalName()
+    {
+        return _goalName;
+    }
+
     public abstract bool IsComplete();
 
     public abstract int RecordEvent();

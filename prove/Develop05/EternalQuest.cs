@@ -53,6 +53,8 @@ public class EternalQuest
 
     public void DisplayGoals()
     {
+        Console.WriteLine("The goals are:");
+
         int goalNumber = 0;
 
         foreach (Goal goal in _goals)
@@ -61,6 +63,37 @@ public class EternalQuest
 
             Console.Write($"{goalNumber}. ");
             goal.DisplayGoal();
+        }
+    }
+
+    public void AttemptUserGoalEvent()
+    {
+        Console.WriteLine("The goals are:");
+
+        int goalNumber = 0;
+
+        foreach (Goal goal in _goals)
+        {
+            goalNumber++;
+            Console.WriteLine($"{goalNumber}. {goal.GetGoalName()}");
+        }
+
+        Console.Write("Which goal did you accomplish? ");
+        int option = int.Parse(Console.ReadLine());
+
+        // To option - 1 is to match the list indexes with the user input.
+        // If goal is NOT complete, trigger event, otherwise infor user of already completion.
+        if (!_goals[option - 1].IsComplete())
+        {
+            int points = _goals[option - 1].RecordEvent();
+
+            _totalPoints += points;
+
+            Console.WriteLine($"Congratulations! You have earned {points} points!\nYou now have {_totalPoints} points.");
+        }
+        else
+        {
+            Console.WriteLine($"The goal {_goals[option - 1].GetGoalName()} is already completed!");
         }
     }
 
