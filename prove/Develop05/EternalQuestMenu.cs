@@ -1,9 +1,14 @@
-public class EternalQuest
+public class EternalQuestMenu
 {
     private List<Goal> _goals = new List<Goal>();
     private int _totalPoints = 0;
 
-    public void AppendSimpleGoal()
+    public int GetTotalPoints()
+    {
+        return _totalPoints;
+    }
+
+    private void AppendSimpleGoal()
     {
         Console.Write("What is the name of your goal? ");
         string name = Console.ReadLine();
@@ -17,7 +22,7 @@ public class EternalQuest
         _goals.Add(new SimpleGoal(name, description, points));
     }
 
-    public void AppendEternalGoal()
+    private void AppendEternalGoal()
     {
         Console.Write("What is the name of your goal? ");
         string name = Console.ReadLine();
@@ -31,7 +36,7 @@ public class EternalQuest
         _goals.Add(new EternalGoal(name, description, points));
     }
 
-    public void AppendChecklistGoal()
+    private void AppendChecklistGoal()
     {
         Console.Write("What is the name of your goal? ");
         string name = Console.ReadLine();
@@ -51,6 +56,26 @@ public class EternalQuest
         _goals.Add(new ChecklistGoal(name, description, points, bonusPoints, goalLimit));
     }
 
+    public void DisplayUserGoalCreationSubMenu()
+    {
+        Console.WriteLine("The types of Goals are:\n  1. Simple Goal\n  2. Eternal Goal\n  3. Checklist Goal");
+        Console.Write("Which type of goal would you like to create? ");
+        int goalOption = int.Parse(Console.ReadLine());
+
+        switch(goalOption)
+        {
+        case 1:
+            AppendSimpleGoal();
+            break;
+        case 2:
+            AppendEternalGoal();
+            break;
+        case 3:
+            AppendChecklistGoal();
+            break;
+        }
+    }
+
     public void DisplayGoals()
     {
         Console.WriteLine("The goals are:");
@@ -66,7 +91,7 @@ public class EternalQuest
         }
     }
 
-    public void AttemptUserGoalEvent()
+    public void DisplayAttemptUserGoalEventSubMenu()
     {
         Console.WriteLine("The goals are:");
 
