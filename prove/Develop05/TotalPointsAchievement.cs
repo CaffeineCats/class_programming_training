@@ -10,6 +10,7 @@ public class TotalPointsAchievement
 
     public TotalPointsAchievement(string name, int totalPointsGoal)
     {
+        _achievementName = name;
         _totalPointsGoal = totalPointsGoal;
         _isComplete = false;
     }
@@ -18,7 +19,7 @@ public class TotalPointsAchievement
     {
         if (!_isComplete && totalPoints >= _totalPointsGoal)
         {
-            Console.WriteLine($"CONGRATULATIONS!!!\nYou have achieved {_achievementName}: \nBy Achieving the {_totalPointsGoal} Total Points Mark!\n'");
+            Console.WriteLine($"CONGRATULATIONS!!!\nYou have achieved {_achievementName}: \nBy Achieving the {_totalPointsGoal} Total Points Mark!'\n");
             _isComplete = true;
         }
     }
