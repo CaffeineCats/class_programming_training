@@ -1,0 +1,4 @@
+150
+SimpleGoal:Finish Final Project,Finish it,100,True
+EternalGoal:Study Code,IMPROVE MAH BOY,50
+ChecklistGoal:SAVE DA SEMESTER,SAVE IT,100,1000000,27,0
