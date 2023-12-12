@@ -13,20 +13,20 @@ public class BreathingActivity : Activity
     private void DisplayBreathingCicle()
     {
         Console.Write("\n\nBreath in...");
-        base.DisplayCountdownAnimationPause(4);
+        DisplayCountdownAnimationPause(4);
         Console.Write("\nHold in...");
-        base.DisplayCountdownAnimationPause(4);
+        DisplayCountdownAnimationPause(4);
         Console.Write("\nNow Breath out...");
-        base.DisplayCountdownAnimationPause(4);
+        DisplayCountdownAnimationPause(4);
         Console.Write("\nHold out...");
-        base.DisplayCountdownAnimationPause(4);
+        DisplayCountdownAnimationPause(4);
     }
 
     public void RunBreathingActivity()
     {
-        base.DisplaySartingMessage();
-        base.PromptActivityDuration();
-        base.DisplayGetReadyPause();
+        DisplaySartingMessage();
+        PromptActivityDuration();
+        DisplayGetReadyPause();
 
         // A time loop to make the activity last the user specified seconds.
         // _activityDurationSeconds is set by the user in PromptActivityDuration(), and is a protected parent member variable.
@@ -43,12 +43,12 @@ public class BreathingActivity : Activity
 
         // There is two new lines specified in the video here, the other one is a \n iniside the next method.
         Console.WriteLine();
-        base.DisplayWellDonePause();
+        DisplayWellDonePause();
 
         // The total duration in seconds is 16 per breathing cicle.
         int totalSeconds = activityCounter * 16;
 
-        base.DisplayFinalStatistics(totalSeconds);
+        DisplayFinalStatistics(totalSeconds);
 
     }
 
