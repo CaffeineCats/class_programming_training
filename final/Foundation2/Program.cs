@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Foundation2 World!");
+        Product product = new Product("007", "James Bond Action Figure", 0.07, 007);
+
+        Console.WriteLine($"{product.GetProductLabel()} {product.GetProductTotalCost()}");
     }
 }
