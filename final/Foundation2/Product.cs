@@ -15,12 +15,11 @@ public class Product
 
     public string GetProductLabel()
     {
-        return $"ID:{_productId} Name:{_productName}";
-    }
-    
-    public double GetProductTotalCost()
-    {
-        return Math.Round(_productUnitPrice * _productQuantity, 2, MidpointRounding.AwayFromZero);
+        return $"ID: {_productId} - Name: {_productName}";
     }
 
+    public double GetProductTotalCost()
+    {
+        return _productUnitPrice * _productQuantity;
+    }
 }
