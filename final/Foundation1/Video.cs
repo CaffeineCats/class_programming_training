@@ -42,5 +42,6 @@ public class Video
         Console.WriteLine($"Video Title: {_videoTitle} - {_videoSecondsLenght} Seconds\nBy: {_videoAuthorName}");
         Console.WriteLine($"Comments ({GetCommentsNumber()}):\n");
         DisplayComments();
+        Console.WriteLine("-------------------------------------------------------------------------------------");
     }
 }
