@@ -7,7 +7,7 @@ public class Event
     private string _eventTime;
     private EventAddress _address;
 
-    // I protected it for I do not want the program creating non specific instances of an event.
+    // I protected it for I do not want to create non specific instances of an event.
     protected Event(string type, string title, string description, string date, string time, EventAddress address)
     {
         _eventType = type;
