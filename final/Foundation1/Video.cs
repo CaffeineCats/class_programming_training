@@ -5,6 +5,7 @@ public class Video
     private int _videoSecondsLenght;
     private List<Comment> _comments = new List<Comment>();
 
+    //In case I have a video without comments, It could happen I guess.
     public Video(string title, string authorName, int secondsLenght)
     {
         _videoTitle = title;
@@ -19,17 +20,18 @@ public class Video
         _comments = comments;
     }
 
+    // If I need to add a single coment to my video comment list (do not know how the interface work).
     public void AppendComment(Comment comment)
     {
         _comments.Add(comment);
     }
 
-    private int GetCommentsNumber()
+    public int GetCommentsNumber()
     {
         return _comments.Count;
     }
 
-    private void DisplayComments()
+    public void DisplayComments()
     {
         foreach (Comment comment in _comments)
         {
@@ -37,6 +39,7 @@ public class Video
         }
     }
 
+    // I believe is a better abstraction to let Video display itself, but the methods are public if I need an interface later.
     public void DisplayVideoInformation()
     {
         Console.WriteLine($"Video Title: {_videoTitle} - {_videoSecondsLenght} Seconds\nBy: {_videoAuthorName}");

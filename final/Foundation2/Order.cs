@@ -11,6 +11,7 @@ public class Order
         _customer =customer;
         _products = products;
     }
+    
     public string GetOrderTotalCost()
     {
         double totalCost = 0;
@@ -22,6 +23,8 @@ public class Order
 
         totalCost = _customer.IsCustomerAddressInsideAmerica() ? totalCost += 5 : totalCost += 35;
 
+        // Is dollars, If I need taxes or any other computation I can create helper methods;
+        // Do calculations here and return a string, makes sense to me, depends of the interface.
         return $"Total: {totalCost.ToString("0.00")}";
     }
 

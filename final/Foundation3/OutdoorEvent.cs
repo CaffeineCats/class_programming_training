@@ -11,7 +11,7 @@ public class OutdoorGatheringEvent : Event
 
      public string GetFullDetails()
     {
-        return $"{GetStandardDetails()}\n-- {_eventType} --\n The weather prediction for that day is {_weatherStatement}, " +
+        return $"{GetStandardDetails()}\n-- {_eventType} --\nThe weather prediction for that day is {_weatherStatement}, " +
         "please dress accordingly";
     }
 }
